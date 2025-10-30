@@ -38,7 +38,7 @@ const syncUserDeletion = inngest.createFunction(
 //inngest function to update user from database
 const syncUserUpdation = inngest.createFunction(
   { id: "update-user-from-clerk" },
-  { event: "clerk/user. " },
+  { event: "clerk/user.updated " },
   async ({ event }) => {
     const { data } = event;
     await prisma.user.update({
